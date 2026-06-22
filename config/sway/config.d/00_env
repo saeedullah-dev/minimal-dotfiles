@@ -1,0 +1,44 @@
+#==============================================================================
+# 00_env - ENVIRONMENT, PATHS, COLORS & FONTS
+#==============================================================================
+
+# DBus & Systemd Environment
+exec ~/.config/sway/scripts/portal.sh
+
+
+# DPI Scaling
+exec_always xrdb -merge <<< "Xft.dpi: 108"
+exec_always gsettings set org.gnome.desktop.interface text-scaling-factor 1.125
+
+# Enable XWayland
+xwayland enable
+
+# User Variables
+set $mod Mod1
+set $term ghostty
+set $font JetBrainsMono Nerd Font 11
+set $bin /home/saeedul/bin/sway
+set $wallpaper ~/.config/sway/wallpaper.png
+set $screenshots /home/saeedul/Pictures/screenshots
+set $lock ~/.config/sway/lock-wrapper.sh
+set $menu rofi -show run
+set $appmenu rofi -show drun
+set $sway_scripts $HOME/.config/sway/scripts
+set $clipboard '[ -x "$(command -v cliphist)" ] && cliphist list | wofi --dmenu | cliphist decode | wl-copy'
+
+# Wayland Environment Variables (Defined in ~/.profile for global session access)
+
+# Tokyo Night Dark Palette
+set $bg      #1a1b26
+set $fg      #a9b1d6
+set $black   #16161e
+set $red     #f7768e
+set $green   #9ece6a
+set $yellow  #ff9e64
+set $blue    #7aa2f7
+set $purple  #bb9af7
+set $aqua    #7dcfff
+set $gray    #414868
+
+# Global font
+font pango:$font
